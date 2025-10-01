@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Space App Challenge</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+
+    body {
+      color: white;
+      overflow-x: hidden;
+      background: black;
+    }
+
+    /* Star background animation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+      background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapers.com%2Fwallpapers%2Fbreathtaking-4k-galaxy-wallpaper-a3qjl9atd2ku58vt.html&psig=AOvVaw3ivgtNDm9EjiApuKqFZQTA&ust=1759398292277000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJDh58PbgpADFQAAAAAdAAAAABAT");
+      animation: moveStars 80s linear infinite;
+      z-index: -1;
+      opacity: 0.7;
+    }
+
+    @keyframes moveStars {
+      0% {transform: translate(0,0);}
+      100% {transform: translate(-600px, -600px);}
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav a {
+      color: #00d9ff;
+      text-decoration: none;
+      margin: 0 25px;
+      font-size: 1.2rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background: #ff0080;
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff0080;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Sections */
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      scroll-snap-align: start;
+      position: relative;
+    }
+
+    section::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #home {background: transparent;}
+    #info {background: rgba(0,0,0,0.6);}
+    #simulator {background: rgba(0,10,40,0.7);}
+    #minigames {background: rgba(20,0,40,0.7);}
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+      text-shadow: 0 0 15px rgba(0,217,255,0.7), 0 0 25px rgba(255,0,128,0.5);
+    }
+
+    p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      animation: fadeInUp 1.5s ease;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    @keyframes fadeInDown {
+      from {opacity:0; transform:translateY(-50px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(50px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+
+    /* Floating animation for icons */
+    h1::before {
+      content: '';
+      display: inline-block;
+      width: 12px; height: 12px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: #00d9ff;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {box-shadow: 0 0 5px #00d9ff;}
+      50% {box-shadow: 0 0 20px #ff0080;}
+      100% {box-shadow: 0 0 5px #00d9ff;}
+    }
+
+    /* Smooth scroll */
+    html {scroll-behavior: smooth;}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#info">Info</a>
+    <a href="#simulator">Simulator</a>
+    <a href="#minigames">Minigames</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home">
+    <h1>🌌 NASA Space Apps Challenge</h1>
+    <p>Welcome to our project! Explore the cosmos with us through simulations and fun minigames.</p>
+  </section>
+
+  <section id="info">
+    <h1>ℹ️ Info</h1>
+    <p>Here’s where you put your project description, team details, and the problem you’re solving.</p>
+  </section>
+
+  <section id="simulator">
+    <h1>🛰️ Simulator</h1>
+    <p>A live simulation placeholder. You can embed a 2D/3D simulator here using JavaScript or external libraries.</p>
+  </section>
+
+  <section id="minigames">
+    <h1>🎮 Minigames</h1>
+    <p>Test your knowledge of space with fun challenges and interactive games.</p>
+  </section>
+</body>
+</html>
