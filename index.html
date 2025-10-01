@@ -19,11 +19,26 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url("stars.jpg") no-repeat center center;
-  background-size: cover;       /* always fill screen */
-  background-attachment: fixed; /* subtle parallax */
-  background-position: center;  /* keep focus centered */
+  background: url("star.jpg") no-repeat center center;
+  background-size: cover;        /* always fill screen */
+  background-position: center;
+  animation: zoomPan 40s infinite alternate ease-in-out;
+  z-index: -1;
 }
+
+/* Keyframes for drifting space effect */
+@keyframes zoomPan {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.2) translate(-30px, -20px);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
 
 
 
