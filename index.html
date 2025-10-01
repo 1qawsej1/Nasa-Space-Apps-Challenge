@@ -14,21 +14,18 @@
     }
 
     /* Star background animation */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 200%; height: 200%;
-      background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapers.com%2Fwallpapers%2Fbreathtaking-4k-galaxy-wallpaper-a3qjl9atd2ku58vt.html&psig=AOvVaw3ivgtNDm9EjiApuKqFZQTA&ust=1759398292277000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJDh58PbgpADFQAAAAAdAAAAABAT");
-      animation: moveStars 80s linear infinite;
-      z-index: -1;
-      opacity: 0.7;
-    }
+ body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%; height: 200%;
+  background: url("star.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: moveStars 60s linear infinite;
+  z-index: -1;
+}
 
-    @keyframes moveStars {
-      0% {transform: translate(0,0);}
-      100% {transform: translate(-600px, -600px);}
-    }
 
     /* Navbar */
     nav {
